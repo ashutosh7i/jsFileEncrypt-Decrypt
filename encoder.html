@@ -1,0 +1,26 @@
+<html>
+    <head>
+
+    </head>
+<body>
+    <input type="file" id="fileInput">
+
+    <script>
+        var BaseIMG;
+        const fileInput = document.getElementById("fileInput");
+        fileInput.addEventListener("change", e => {
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.addEventListener("load", () =>{
+            BaseIMG=reader.result;
+            console.log(BaseIMG);
+            });
+
+        reader.readAsDataURL(file);
+    });
+
+    </script>
+</body>
+</html>
